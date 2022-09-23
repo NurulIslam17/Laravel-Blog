@@ -7,7 +7,7 @@
 
     <meta charset="utf-8" />
     <title>
-        Biztrox - @yield('title')
+        bixtrox - @yield('title')
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
@@ -16,11 +16,11 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- Bootstrap Css -->
-    <link href="{{asset('/')}}admin_assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="{{asset('/')}}admin_assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="{{asset('/')}}admin_assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -29,10 +29,10 @@
 <!-- Begin page -->
 <div id="layout-wrapper">
 
-    <header id="page-topbar">
-       @include('admin.includes.topnav')
-    </header> <!-- ========== Left Sidebar Start ========== -->
-        @include('admin.includes.sidenav')
+    @include('admin.includes.topnav')
+    @include('admin.includes.sidenav')
+
+
     <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
@@ -42,19 +42,7 @@
 
         <div class="page-content">
             <div class="container-fluid">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-
-                                @yield('content')
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
+                    @yield('content')
             </div>
             <!-- container-fluid -->
         </div>
@@ -87,7 +75,7 @@
                                 <tr>
                                     <th scope="row">
                                         <div>
-                                            <img src="{{asset('/')}}admin_assets/images/product/img-7.png" alt="" class="avatar-sm">
+                                            <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
                                         </div>
                                     </th>
                                     <td>
@@ -101,7 +89,7 @@
                                 <tr>
                                     <th scope="row">
                                         <div>
-                                            <img src="{{asset('/')}}admin_assets/images/product/img-4.png" alt="" class="avatar-sm">
+                                            <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
                                         </div>
                                     </th>
                                     <td>
@@ -149,7 +137,6 @@
         <!-- end modal -->
 
         @include('admin.includes.footer')
-
     </div>
     <!-- end main content-->
 
@@ -172,7 +159,7 @@
 
         <div class="p-4">
             <div class="mb-2">
-                <img src="{{asset('/')}}admin_assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+                <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
             </div>
             <div class="custom-control custom-switch mb-3">
                 <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
@@ -180,7 +167,7 @@
             </div>
 
             <div class="mb-2">
-                <img src="{{asset('/')}}admin_assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+                <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
             </div>
             <div class="custom-control custom-switch mb-3">
                 <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
@@ -188,13 +175,12 @@
             </div>
 
             <div class="mb-2">
-                <img src="{{asset('/')}}admin_assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+                <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
             </div>
             <div class="custom-control custom-switch mb-5">
                 <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
                 <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
             </div>
-
 
         </div>
 
@@ -206,19 +192,19 @@
 <div class="rightbar-overlay"></div>
 
 <!-- JAVASCRIPT -->
-<script src="assets/libs  /jquery/jquery.min.js"></script>
-<script src="assets/libs  /bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs  /metismenu/metisMenu.min.js"></script>
-<script src="assets/libs  /simplebar/simplebar.min.js"></script>
-<script src="assets/libs  /node-waves/waves.min.js"></script>
+<script src="assets/libs/jquery/jquery.min.js"></script>
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="assets/libs/simplebar/simplebar.min.js"></script>
+<script src="assets/libs/node-waves/waves.min.js"></script>
 
 <!-- apexcharts -->
-<script src="assets/libs  /apexcharts/apexcharts.min.js"></script>
+<script src="assets/libs/apexcharts/apexcharts.min.js"></script>
 
-<script src="{{asset('/')}}admin_assets/js/pages/dashboard.init.js"></script>
+<script src="assets/js/pages/dashboard.init.js"></script>
 
 <!-- App js -->
-<script src="{{asset('/')}}admin_assets/js/app.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 
 

@@ -2,9 +2,10 @@
 @extends('admin.master')
 
 @section('title')
-    Admin Home
+    Home Page
 @endsection
 
 @section('content')
-    <h2 class="text-center">Admin Home</h2>
+    <h1> Admin Home </h1>
+    @include('admin.includes.main')
 @endsection
