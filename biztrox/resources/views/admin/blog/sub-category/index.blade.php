@@ -14,7 +14,7 @@
                         <thead>
                         <tr class="bg-warning">
                             <th>Serial</th>
-                            <th>Sub Category Id</th>
+                            <th>Category Name</th>
                             <th>Sub Category Name</th>
                             <th>Status</th>
                             <th class="text-center">Action</th>
@@ -25,13 +25,21 @@
                             @foreach($sub_category as $val)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{$val->sub_category_id}}</td>
+                                    <td>{{$val->blogCategory->category_name}}</td>
                                     <td>{{$val->sub_category_name}}</td>
                                     <td>{{ $val->status =='1' ? 'Published' : 'Unpublished' }}</td>
 
                                     <td class="text-center">
-                                        <a href="" class="btn btn-success rounded-0 text-light"> Edit </a>
-                                        <a href="" onclick="return confirm('Are You Sure ?')" class="btn btn-danger rounded-0 text-light"> Delete </a>
+                                        <a href="{{route('blog-sub-categories.edit',$val->id) }}" class="btn btn-success rounded-0 text-light"> <i class="bx bx-edit"></i> </a>
+
+                                        <form action="{{route('blog-sub-categories.destroy',$val->id)}}" class="d-inline" onclick="return confirm('Are you sure ?')" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="bx bx-trash"></i>
+
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

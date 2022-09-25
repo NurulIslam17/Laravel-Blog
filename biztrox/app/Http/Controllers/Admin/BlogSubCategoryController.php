@@ -16,8 +16,10 @@ class BlogSubCategoryController extends Controller
      */
     public function index()
     {
+//        return BlodSubCategory::latest()->with('blogCategory')->get();
+
         return view('admin.blog.sub-category.index',[
-            'sub_category' => BlodSubCategory::all(),
+            'sub_category' => BlodSubCategory::latest()->get(),
         ]);
     }
 
@@ -65,7 +67,13 @@ class BlogSubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+//        return  $id;
+
+        return view('admin.blog.sub-category.edit',[
+            'blogSubCategories' => BlodSubCategory::find($id),
+            'blogCategories'  => BlogCategory::where('status',1)->get(),
+        ]);
+
     }
 
     /**
@@ -77,7 +85,8 @@ class BlogSubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        BlodSubCategory::saveOrUpdate($request,$id);
+        return redirect('/blog-sub-categories')->with('success','Blog Sub Category Updated Successfully.');
     }
 
     /**
@@ -88,6 +97,7 @@ class BlogSubCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        BlodSubCategory::find($id)->delete();
+        return back()->with('success','Blog Sub Category Deleted Successfully.');
     }
 }

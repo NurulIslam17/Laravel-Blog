@@ -15,4 +15,10 @@ class BlodSubCategory extends Model
     {
         BlodSubCategory::UpdateOrCreate(['id' => $id],$request->except('_token'));
     }
+
+    public  function blogCategory()
+    {
+       return $this->belongsTo(BlogCategory::class,'sub_category_id');
+    }
+
 }
