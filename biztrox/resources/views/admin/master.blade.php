@@ -13,14 +13,23 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('/')}}admin/adassets/images/favicon.ico">
 
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- DataTables -->
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -75,7 +84,7 @@
                                 <tr>
                                     <th scope="row">
                                         <div>
-                                            <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
+                                            <img src="{{asset('/')}}admin/assets/images/product/img-7.png" alt="" class="avatar-sm">
                                         </div>
                                     </th>
                                     <td>
@@ -89,7 +98,7 @@
                                 <tr>
                                     <th scope="row">
                                         <div>
-                                            <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
+                                            <img src="{{asset('/')}}admin/assets/images/product/img-4.png" alt="" class="avatar-sm">
                                         </div>
                                     </th>
                                     <td>
@@ -144,67 +153,104 @@
 <!-- END layout-wrapper -->
 
 <!-- Right Sidebar -->
-<div class="right-bar">
-    <div data-simplebar class="h-100">
-        <div class="rightbar-title px-3 py-4">
-            <a href="javascript:void(0);" class="right-bar-toggle float-right">
-                <i class="mdi mdi-close noti-icon"></i>
-            </a>
-            <h5 class="m-0">Settings</h5>
-        </div>
+{{--<div class="right-bar">--}}
+{{--    <div data-simplebar class="h-100">--}}
+{{--        <div class="rightbar-title px-3 py-4">--}}
+{{--            <a href="javascript:void(0);" class="right-bar-toggle float-right">--}}
+{{--                <i class="mdi mdi-close noti-icon"></i>--}}
+{{--            </a>--}}
+{{--            <h5 class="m-0">Settings</h5>--}}
+{{--        </div>--}}
 
-        <!-- Settings -->
-        <hr class="mt-0" />
-        <h6 class="text-center mb-0">Choose Layouts</h6>
+{{--        <!-- Settings -->--}}
+{{--        <hr class="mt-0" />--}}
+{{--        <h6 class="text-center mb-0">Choose Layouts</h6>--}}
 
-        <div class="p-4">
-            <div class="mb-2">
-                <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="custom-control custom-switch mb-3">
-                <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
-                <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
-            </div>
+{{--        <div class="p-4">--}}
+{{--            <div class="mb-2">--}}
+{{--                <img src="{{asset('/')}}admin/assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="custom-control custom-switch mb-3">--}}
+{{--                <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />--}}
+{{--                <label class="custom-control-label" for="light-mode-switch">Light Mode</label>--}}
+{{--            </div>--}}
 
-            <div class="mb-2">
-                <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="custom-control custom-switch mb-3">
-                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
-                <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
-            </div>
+{{--            <div class="mb-2">--}}
+{{--                <img src="{{asset('/')}}admin/assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="custom-control custom-switch mb-3">--}}
+{{--                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />--}}
+{{--                <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>--}}
+{{--            </div>--}}
 
-            <div class="mb-2">
-                <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-            </div>
-            <div class="custom-control custom-switch mb-5">
-                <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
-                <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
-            </div>
+{{--            <div class="mb-2">--}}
+{{--                <img src="{{asset('/')}}admin/assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">--}}
+{{--            </div>--}}
+{{--            <div class="custom-control custom-switch mb-5">--}}
+{{--                <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />--}}
+{{--                <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>--}}
+{{--            </div>--}}
 
-        </div>
+{{--        </div>--}}
 
-    </div> <!-- end slimscroll-menu-->
-</div>
+{{--    </div> <!-- end slimscroll-menu-->--}}
+{{--</div>--}}
 <!-- /Right-bar -->
 
 <!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
 
 <!-- JAVASCRIPT -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/metismenu/metisMenu.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/jquery/jquery.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
+
 
 <!-- apexcharts -->
-<script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
 
-<script src="assets/js/pages/dashboard.init.js"></script>
+<script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
 
 <!-- App js -->
-<script src="assets/js/app.js"></script>
+<script src="{{asset('/')}}admin/assets/js/app.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Responsive examples -->
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+<!-- Required datatable js -->
+<script src="{{asset('/')}}admin/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/jszip/jszip.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/pdfmake/build/pdfmake.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/pdfmake/build/vfs_fonts.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- Responsive examples -->
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+<!-- Datatable init js -->
+<script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script>
+
+
+    @if(Session::has('success'))
+        <script>
+            toastr.success("{{Session::get('success')}}")
+        </script>
+        {{Session::forget('success')}}
+    @endif
+
+
 </body>
 
 

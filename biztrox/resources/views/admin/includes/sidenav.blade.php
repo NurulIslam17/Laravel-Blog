@@ -33,8 +33,8 @@
                         <span>Blog Sub Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Add Sub Category</a></li>
-                        <li><a href="#">Manage Sub Category</a></li>
+                        <li><a href="{{route('blog-sub-categories.create')}}">Add Sub Category</a></li>
+                        <li><a href="{{route('blog-sub-categories.index')}}">Manage Sub Category</a></li>
 
                     </ul>
                 </li>
