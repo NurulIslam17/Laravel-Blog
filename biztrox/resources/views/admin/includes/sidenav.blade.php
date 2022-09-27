@@ -52,6 +52,21 @@
                     </ul>
                 </li>
 
+                <li class="menu-title">Artical</li>
+
+                {{--                /Blog  Category--}}
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-pencil"></i>
+                        <span>Aretical</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('articals.create') }}">Add Aretical</a></li>
+                        <li><a href="{{ route('articals.index') }}">Manage Aretical</a></li>
+
+                    </ul>
+                </li>
 
             </ul>
         </div>
