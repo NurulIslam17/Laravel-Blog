@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ArticalCOntroller extends Controller
 {
+
+    private $delete;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,9 @@ class ArticalCOntroller extends Controller
      */
     public function index()
     {
-        return view('admin.artical.index');
+        return view('admin.artical.index',[
+            'articales' => Artical::latest()->get(),
+        ]);
     }
 
     /**
@@ -59,7 +63,9 @@ class ArticalCOntroller extends Controller
      */
     public function edit($id)
     {
-        //
+       return view('admin.artical.edit',[
+           'category' =>Artical::find($id),
+       ]);
     }
 
     /**
@@ -71,7 +77,8 @@ class ArticalCOntroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Artical::updateArical($request,$id);
+        return redirect()->route('articals.index')->with('update','Blog Updated Successfully.');
     }
 
     /**
@@ -82,6 +89,16 @@ class ArticalCOntroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->delete = Artical::find($id);
+
+        if($this->delete->artical_image)
+        {
+            if(file_exists($this->delete->artical_image))
+            {
+                unlink($this->delete->artical_image);
+            }
+        }
+        $this->delete->delete();
+        return redirect()->route('articals.index')->with('delete','Articale Deleted');
     }
 }

@@ -47,5 +47,30 @@ class Artical extends Model
 
     }
 
+    public static function updateArical($request,$id)
+    {
+        self::$artical = Artical::find($id);
+
+        self::$artical->artical_title               = $request->artical_title;
+        self::$artical->status                      = $request->status;
+        self::$artical->blog_description            = $request->blog_description;
+        self::$artical->slug                        = str_replace(' ','-',$request->artical_title.'.com');
+        self::$artical->poster_id                   = Auth::id();
+
+        if($request->file('artical_image'))
+        {
+            if(self::$artical->artical_image)
+            {
+                unlink(self::$artical->artical_image);
+                self::$artical->artical_image       = self::saveImage($request);
+            }
+            else{
+                self::$artical->artical_image       = self::saveImage($request);
+            }
+
+        }
+        self::$artical->save();
+    }
+
 
 }
