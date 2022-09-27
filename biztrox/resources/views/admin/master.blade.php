@@ -30,6 +30,9 @@
     <!-- Responsive datatable examples -->
     <link href="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -242,6 +245,15 @@
 <!-- Datatable init js -->
 <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script>
 
+{{--summer Name--}}
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+
+</script>
 
     @if(Session::has('success'))
         <script>

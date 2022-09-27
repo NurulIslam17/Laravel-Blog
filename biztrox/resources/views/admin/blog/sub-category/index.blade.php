@@ -37,7 +37,6 @@
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger">
                                                 <i class="bx bx-trash"></i>
-
                                             </button>
                                         </form>
                                     </td>

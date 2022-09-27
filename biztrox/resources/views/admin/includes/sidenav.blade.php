@@ -46,8 +46,8 @@
                         <span>Main Blog</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Add Blog</a></li>
-                        <li><a href="#">Manage Blog</a></li>
+                        <li><a href="{{route('blogs.create')}}">Add Blog</a></li>
+                        <li><a href="{{route('blogs.index')}}">Manage Blog</a></li>
 
                     </ul>
                 </li>

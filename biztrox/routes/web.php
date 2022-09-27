@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\BlogController;
 
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogSubCategoryController;
@@ -31,6 +32,8 @@ Route::middleware([
 
     //sub category.......................................................................................................................
     Route::resource('blog-sub-categories',BlogSubCategoryController::class);
+    // Blog Routes
+    Route::resource('blogs',BlogController::class);
 
 
 });
