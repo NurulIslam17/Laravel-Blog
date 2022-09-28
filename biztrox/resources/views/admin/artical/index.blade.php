@@ -14,29 +14,28 @@
                     <hr/>
                     <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
-                        <tr class="bg-warning">
-                            <th>Serial</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Status</th>
-                            <th>Image</th>
-                            <th class="text-center">Action</th>
-                        </tr>
+                            <tr class="bg-warning">
+                                <th>Serial</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Image</th>
+                                <th class="text-center">Action</th>
+                            </tr>
                         </thead>
 
                         <tbody>
                         @foreach($articales as $articale)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ substr($articale->artical_title,0,35)}}...</td>
-                                <td>{{ substr($articale->blog_description,0,35)}}...</td>
+                                <td>{{ substr($articale->artical_title,0,25)}}...</td>
+                                <td>{{ substr($articale->blog_description,0,25)}}...</td>
                                 <td>{{ $articale->status =='1' ? 'Published' : 'Unpublished' }}</td>
                                 <td>
                                     <img src="{{asset($articale->artical_image)}}" style="height: 50px;width: 50px">
                                 </td>
 
                                 <td class="text-center">
-
                                     <a href="{{route('articals.edit',$articale->id)}}" class="btn btn-success rounded-0 text-light"> <i class="bx bx-edit"></i> </a>
                                     <form action="{{route('articals.destroy',$articale->id)}}" class="d-inline" onclick="return confirm('Are you sure ?')" method="post">
                                         @csrf

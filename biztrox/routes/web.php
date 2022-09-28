@@ -6,14 +6,17 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ArticalCOntroller;
 
+use App\Http\Controllers\Font\FontController;
+
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogSubCategoryController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+//Route::get('/', function () {
+//    return view('welcome');
+//})->name('home');
 
+Route::get('/',[FontController::class,'index'])->name('/');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

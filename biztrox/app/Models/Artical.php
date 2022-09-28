@@ -71,6 +71,10 @@ class Artical extends Model
         }
         self::$artical->save();
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 
 }
