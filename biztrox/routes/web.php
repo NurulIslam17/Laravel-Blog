@@ -16,7 +16,9 @@ use App\Http\Controllers\Admin\BlogSubCategoryController;
 //    return view('welcome');
 //})->name('home');
 
-Route::get('/',[FontController::class,'index'])->name('/');
+Route::get('/',[FontController::class,'index'])->name('home');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
