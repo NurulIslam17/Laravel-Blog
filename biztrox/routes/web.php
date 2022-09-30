@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ArticalCOntroller;
+use App\Http\Controllers\Admin\ServiceController;
 
 use App\Http\Controllers\Font\FontController;
 
@@ -43,6 +44,9 @@ Route::middleware([
 
     //Artical
     Route::resource('articals',ArticalCOntroller::class);
+
+    // Service
+    Route::resource('services',ServiceController::class);
 
 
 });

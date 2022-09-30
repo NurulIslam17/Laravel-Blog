@@ -68,6 +68,22 @@
                     </ul>
                 </li>
 
+                <li class="menu-title">Service</li>
+
+                {{--                /Blog  Category--}}
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-pencil"></i>
+                        <span>Service</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('services.create') }}">Add Service</a></li>
+                        <li><a href="{{ route('services.index') }}">Manage Service</a></li>
+
+                    </ul>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

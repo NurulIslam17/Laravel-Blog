@@ -147,47 +147,22 @@
                     <h2 class="section-title section-title-border">Service We Provide</h2>
                 </div>
                 <!-- service item -->
+                @foreach($services as $service)
+
                 <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
                     <div class="card text-center">
                         <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="{{asset('/')}}fontend/images/service/service-1.jpg" alt="service-image">
+                            <img class="card-img-top rounded-0" src="{{asset($service->service_image)}}" height="220px" alt="service-image">
                         </div>
                         <div class="card-body p-0">
-                            <h4 class="card-title pt-3">Business Consulting</h4>
-                            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur adipisicing elit sed done
-                                eius mod tempor enim ad minim veniam quis nostrud.</p>
+                            <h4 class="card-title pt-3">{{substr($service->service_title,0,20)}}</h4>
+                            <p class="card-text mx-2 mb-0">{!! \Illuminate\Support\Str::words($service->service_description,30) !!}</p>
                             <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- service item -->
-                <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                    <div class="card text-center">
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="{{asset('/')}}fontend/images/service/service-2.jpg" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <h4 class="card-title pt-3">Valuable Idea</h4>
-                            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur adipisicing elit sed done
-                                eius mod tempor enim ad minim veniam quis nostrud.</p>
-                            <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- service item -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="card text-center">
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="{{asset('/')}}fontend/images/service/service-3.jpg" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <h4 class="card-title pt-3">Market Strategy</h4>
-                            <p class="card-text mx-2 mb-0">Lorem ipsum dolor amet consecte tur adipisicing elit sed done
-                                eius mod tempor enim ad minim veniam quis nostrud.</p>
-                            <a href="service-single.html" class="btn btn-secondary translateY-25">Read More</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -381,6 +356,8 @@
                     <h2 class="section-title section-title-border">Latest Article</h2>
                 </div>
                 <!-- blog item -->
+
+
                 @foreach($articals as $artical)
                 <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                     <div class="card mb-3">
@@ -388,11 +365,14 @@
                         <div class="card-body p-0">
                             <div class="p-3 border-bottom">
                                 <h6 class="text-primary">{{$artical->updated_at->format('M d,y')}}</h6>
-                                <a href="blog-single.html" class="h4 card-title font-primary text-dark">{{substr($artical->artical_title,0,20)}}</a>
-                                <p class="card-text text-center mx-0 px-0">{{substr($artical->blog_description,0,80)}}</p>
+                                <a href="blog-single.html" class="h4 card-title font-primary text-dark">{{substr($artical->artical_title,0,20)}}...</a>
+                                <p class="card-text text-center mx-0 px-0">{{substr($artical->blog_description,0,80)}}...</p>
                             </div>
+                            <?php
+                            $user = \App\Models\User::find($artical->poster_id)
+                            ?>
                             <a href="#" class="card-link d-inline-block text-color p-2"><i
-                                    class="text-primary mr-2 ti-user"></i>Admin</a>
+                                    class="text-primary mr-2 ti-user"></i>{{$user->name}}</a>
 
                             <a href="{{route('home')}}" class="card-link d-inline-block text-color p-2 px-3 float-right border-left"><i
                                     class="text-primary ti-share"></i></a>
