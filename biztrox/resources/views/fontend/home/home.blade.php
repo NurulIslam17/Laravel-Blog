@@ -365,7 +365,7 @@
                         <div class="card-body p-0">
                             <div class="p-3 border-bottom">
                                 <h6 class="text-primary">{{$artical->updated_at->format('M d,y')}}</h6>
-                                <a href="blog-single.html" class="h4 card-title font-primary text-dark">{{substr($artical->artical_title,0,20)}}...</a>
+                                <a href="{{route('artical.details',['slug'=>$artical->slug])}}" class="h4 card-title font-primary text-dark">{{substr($artical->artical_title,0,20)}}...</a>
                                 <p class="card-text text-center mx-0 px-0">{{substr($artical->blog_description,0,80)}}...</p>
                             </div>
                             <?php

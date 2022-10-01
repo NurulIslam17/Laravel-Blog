@@ -29,7 +29,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ substr($articale->artical_title,0,25)}}...</td>
-                                <td>{{ substr($articale->blog_description,0,25)}}...</td>
+                                <td>{!! \Illuminate\Support\Str::words($articale->blog_description,4) !!}</td>
                                 <td>{{ $articale->status =='1' ? 'Published' : 'Unpublished' }}</td>
                                 <td>
                                     <img src="{{asset($articale->artical_image)}}" style="height: 50px;width: 50px">

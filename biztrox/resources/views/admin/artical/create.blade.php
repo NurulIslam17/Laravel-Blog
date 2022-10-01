@@ -31,7 +31,7 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-4 col-form-label">Description</label>
                             <div class="col-sm-8">
-                                <textarea name="blog_description" class="form-control" cols="30" rows="10"></textarea>
+                                <textarea name="blog_description" id="summernote" class="form-control" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 

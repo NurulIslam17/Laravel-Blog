@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\BlogSubCategoryController;
 //})->name('home');
 
 Route::get('/',[FontController::class,'index'])->name('home');
+Route::get('/artical-details/{slug}',[FontController::class,'articalDetails'])->name('artical.details');
 
 
 Route::middleware([
