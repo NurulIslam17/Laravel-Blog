@@ -28,7 +28,7 @@ Step 4: run the command php artisan migrate
 
 ## About This Project
 
-This is a n web base school management system where 3 types of user exist. 
+This is a n web base blog site where 2 types of user exist. 
 
 #Admin:Admin can create artical category wise and post
  
