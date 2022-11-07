@@ -7,15 +7,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
 ## Minimum Requirements
 PHP 8+
 
@@ -39,15 +30,12 @@ Step 4: run the command php artisan migrate
 
 This is a n web base school management system where 3 types of user exist. 
 
-#Admin:Are able to create teacher and approve the courses create by teacher
+#Admin:Admin can create artical category wise and post
  
-#Teacher: Are able to create course for the student
+#user: User are able to create their acount and comment the artical. They can also post theire thought but it will remain pending in admin pannel. if admin approve it will be published
 
-#Student(Contenue) : can create theire account by registering and the can login through theire account and buy theire favourite cousrses
 
 ## Software Requrement
-
-I have used those languages to create this project.
 
 # Front-End
 
