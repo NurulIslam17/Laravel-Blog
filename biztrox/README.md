@@ -19,7 +19,7 @@ Laravel 9.0
 
 ## How to install
 
-Step 1: Clone the repository https://github.com/NurulIslam17/School_Management
+Step 1: Clone the repository https://github.com/NurulIslam17/Laravel-Blog
 
 Step 2: Install Laravel Composer install
 
